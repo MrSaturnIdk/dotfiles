@@ -9,12 +9,28 @@ alias lspkg="printf '%s\n' \"${PATH//:/$'\n'}\" | xargs ls -A --color=auto"
 alias browse='lynx -accept_all_cookies'
 
 help2() {
+    if [ -t 2 ]; then
+        ansi_reset="\033[0m"
+        ansi_bold="\033[1m"
+        ansi_red="\033[31m"
+    fi
     if [ "$#" -eq 0 ]; then
-        printf '\033[1;31mError:\033[0m Provide more than 1 argument\n' >&2
+        printf 'help2: %berror:%b %bprovide at least 1 argument%b\n' \
+            "${ansi_bold}${ansi_red}" \
+            "${ansi_reset}" \
+            "${ansi_bold}" \
+            "${ansi_reset}" \
+        >&2
         return 1
     fi
     if ! command -v $1 > /dev/null 2>&1; then
-        printf '\033[1;31mError:\033[0m Command "%s" not found\n' "$1" >&2
+        printf 'help2: %berror:%b %bcommand %b not found%b\n' \
+            "${ansi_bold}${ansi_red}" \
+            "${ansi_reset}" \
+            "${ansi_bold}" \
+            "'$1'" \
+            "${ansi_reset}" \
+        >&2
         return 1
     fi
 
