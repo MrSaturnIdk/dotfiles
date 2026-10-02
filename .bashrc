@@ -51,6 +51,14 @@ help2() {
 
 export CXX='ccache clang++'
 export CC='ccache clang'
+export LD="lld"
+export AR="llvm-ar"
+export NM="llvm-nm"
+export RANLIB="llvm-ranlib"
+export READELF="llvm-readelf"
+export STRIP="llvm-strip"
+export OBJCOPY="llvm-objcopy"
+export OBJDUMP="llvm-objdump"
 export MANPAGER='vim +MANPAGER'
 export MAKEFLAGS="-j$(nproc)"
 
