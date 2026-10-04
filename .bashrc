@@ -69,6 +69,7 @@ export READELF="readelf"
 export STRIP="strip"
 export OBJCOPY="objcopy"
 export OBJDUMP="objdump"
+export GDB='gdb'
 export MANPAGER='vim --not-a-term +MANPAGER -'
 export MAKEFLAGS="-j$(nproc)"
 export PS1='\h/\u:\s \v:\w\$ '
