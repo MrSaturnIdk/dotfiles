@@ -56,9 +56,9 @@ case ":${PATH}:" in
 esac
 export PATH
 export CC='gcc'
-export CFLAGS='-pipe -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wformat=2 -Wcast-qual -Wstrict-prototypes -Wmissing-field-initializers -Wuninitialized'
+export CFLAGS='-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wformat=2 -Wcast-qual -Wstrict-prototypes -Wmissing-field-initializers -Wuninitialized'
 export CXX='g++'
-export CXXFLAGS='-pipe -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wformat=2 -Wcast-qual -Wmissing-field-initializers -Wuninitialized'
+export CXXFLAGS='-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wformat=2 -Wcast-qual -Wmissing-field-initializers -Wuninitialized'
 export CPP='gcc -E'
 export AS='as'
 export LD="ld"
