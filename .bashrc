@@ -49,6 +49,7 @@ help2() {
     vim -M -c 'set filetype=help' ${tempfile}
 }
 
+# Mass wall of exports and stuff
 case ":${PATH}:" in
     *":/usr/lib/ccache/bin:"*) ;;
     *) PATH="/usr/lib/ccache/bin:${PATH}"
@@ -70,5 +71,6 @@ export OBJCOPY="objcopy"
 export OBJDUMP="objdump"
 export MANPAGER='vim +MANPAGER'
 export MAKEFLAGS="-j$(nproc)"
+export PS1='\h/\u:\s \v:\w\$ '
 
 printf 'Welcome back Mr Saturn!\n'
