@@ -7,8 +7,6 @@
 !/.tarignore
 !/.gitignore_global
 !/.bash_profile
-!/clang.cfg
-!/clang++.cfg
 
 !/*.md
 !/LICENSE
