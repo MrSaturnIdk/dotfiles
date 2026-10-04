@@ -49,16 +49,25 @@ help2() {
     vim -M -c 'set filetype=help' ${tempfile}
 }
 
-export CXX='ccache clang++'
-export CC='ccache clang'
-export LD="lld"
-export AR="llvm-ar"
-export NM="llvm-nm"
-export RANLIB="llvm-ranlib"
-export READELF="llvm-readelf"
-export STRIP="llvm-strip"
-export OBJCOPY="llvm-objcopy"
-export OBJDUMP="llvm-objdump"
+case ":${PATH}:" in
+    *":/usr/lib/ccache/bin:"*) ;;
+    *) PATH="/usr/lib/ccache/bin:${PATH}"
+esac
+export PATH
+export CC='gcc'
+export CFLAGS='-pipe -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wformat=2 -Wcast-qual -Wstrict-prototypes -Wmissing-field-initializers -Wuninitialized'
+export CXX='g++'
+export CXXFLAGS='-pipe -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wformat=2 -Wcast-qual -Wmissing-field-initializers -Wuninitialized'
+export CPP='gcc -E'
+export AS='as'
+export LD="ld"
+export AR="ar"
+export NM="nm"
+export RANLIB="ranlib"
+export READELF="readelf"
+export STRIP="strip"
+export OBJCOPY="objcopy"
+export OBJDUMP="objdump"
 export MANPAGER='vim +MANPAGER'
 export MAKEFLAGS="-j$(nproc)"
 
