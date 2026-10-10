@@ -1,8 +1,8 @@
+runtime ftplugin/man.vim
+
 syntax on
 set number
 set ruler
-
-runtime ftplugin/man.vim
 
 set backspace=indent,eol,start
 
