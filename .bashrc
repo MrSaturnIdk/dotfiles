@@ -15,9 +15,13 @@ case ":${PATH}:" in
 esac
 export PATH
 export CC='gcc'
-export CFLAGS='-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wformat=2 -Wcast-qual -Wstrict-prototypes -Wmissing-field-initializers -Wuninitialized'
+cflags_1='-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference'
+cflags_2='-Wformat=2 -Wcast-qual -Wstrict-prototypes -Wmissing-field-initializers -Wuninitialized'
+export CFLAGS="${cflags_1} ${cflags_2}"
 export CXX='g++'
-export CXXFLAGS='-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference -Wformat=2 -Wcast-qual -Wmissing-field-initializers -Wuninitialized'
+cxxflags_1='-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference'
+cxxflags_2='-Wformat=2 -Wcast-qual -Wmissing-field-initializers -Wuninitialized'
+export CXXFLAGS="${cxxflags_1} ${cxxflags_2}"
 export CPP='gcc -E'
 export AS='as'
 export LD="ld"
