@@ -10,8 +10,8 @@ alias browse='lynx -accept_all_cookies'
 
 # Mass wall of exports and stuff
 case ":${PATH}:" in
-    *":/usr/lib/ccache/bin:"*) ;;
-    *) PATH="/usr/lib/ccache/bin:${PATH}"
+	*":/usr/lib/ccache/bin:"*) ;;
+	*) PATH="/usr/lib/ccache/bin:${PATH}"
 esac
 export PATH
 export CC='gcc'
