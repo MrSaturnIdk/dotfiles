@@ -34,7 +34,7 @@ export OBJCOPY="objcopy"
 export OBJDUMP="objdump"
 export GDB='gdb'
 export MANPAGER='vim -u /dev/null --not-a-term "+runtime ftplugin/man.vim" +MANPAGER -'
-export MAKEFLAGS="-j$(nproc)"
+export MAKEFLAGS="-j$(nproc) -l$(nproc)"
 export PS1='\h/\u:\s \v:\w\$ '
 cmake_flags='-DCMAKE_C_FLAGS_RELEASE="-O2 -DNDEBUG" -DCMAKE_C_FLAGS_DEBUG="-ggdb3"'
 export CMAKEFLAGS="${cmake_flags} -DCMAKE_C_FLAGS_RELWITHDEBINFO='-Og -DNDEBUG -ggdb3'"
