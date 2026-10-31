@@ -5,7 +5,7 @@ alias grep='grep --color=auto'
 alias mktargz='tar -X ~/.tarignore -czvf'
 alias mktar='tar -X ~/.tarignore -cvf'
 alias rmswp='find . -type f -name ".*.sw?" -delete'
-alias lspkg="printf '%s\n' \"${PATH//:/$'\n'}\" | xargs ls -A --color=auto"
+alias lspkg="printf '%s\n' \"\${PATH//:/$'\n'}\" | xargs ls -A --color=auto"
 alias browse='lynx -accept_all_cookies'
 findref() {
 	lynx -accept_all_cookies "https://cppreference.com/index.php?search=${1}"
