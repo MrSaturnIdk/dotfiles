@@ -38,6 +38,8 @@ export MANPAGER='vim -u /dev/null --not-a-term "+runtime ftplugin/man.vim" +MANP
 export MAKEFLAGS="-j$(nproc) -l$(nproc)"
 export PS1='\h/\u:\s \v:\w\$ '
 export CMAKEFLAGS=\
-'-DCMAKE_C_FLAGS_RELEASE="-O2 -DNDEBUG" -DCMAKE_C_FLAGS_DEBUG="-ggdb3" -DCMAKE_C_FLAGS_RELWITHDEBINFO="-Og -DNDEBUG"'
+'-DCMAKE_C_FLAGS_RELEASE="-O2 -DNDEBUG" -DCMAKE_C_FLAGS_DEBUG="-ggdb3" -DCMAKE_C_FLAGS_RELWITHDEBINFO="-Og -DNDEBUG" '\
+'-DCMAKE_CXX_FLAGS_RELEASE="-O2 -DNDEBUG" '\
+'-DCMAKE_CXX_FLAGS_DEBUG="-ggdb3" -DCMAKE_CXX_FLAGS_RELWITHDEBINFO="-Og -DNDEBUG"'
 
 printf 'Welcome back Mr Saturn!\n'
