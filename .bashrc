@@ -18,13 +18,11 @@ case ":${PATH}:" in
 esac
 export PATH
 export CC='gcc'
-cflags_1='-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference'
-cflags_2='-Wformat=2 -Wcast-qual -Wstrict-prototypes -Wmissing-field-initializers -Wuninitialized'
-export CFLAGS="${cflags_1} ${cflags_2}"
 export CXX='g++'
-cxxflags_1='-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference'
-cxxflags_2='-Wformat=2 -Wcast-qual -Wmissing-field-initializers -Wuninitialized'
-export CXXFLAGS="${cxxflags_1} ${cxxflags_2}"
+export CXXFLAGS=\
+'-pipe -march=native -Wall -Wextra -pedantic -Wconversion -Wsign-conversion -Wshadow -Wnull-dereference '\
+'-Wformat=2 -Wcast-qual -Wmissing-field-initializers -Wuninitialized'
+export CFLAGS="${CXXFLAGS} -Wstrict-prototypes"
 export CPP='gcc -E'
 export AS='as'
 export LD="ld"
@@ -39,7 +37,7 @@ export GDB='gdb'
 export MANPAGER='vim -u /dev/null --not-a-term "+runtime ftplugin/man.vim" +MANPAGER -'
 export MAKEFLAGS="-j$(nproc) -l$(nproc)"
 export PS1='\h/\u:\s \v:\w\$ '
-cmake_flags='-DCMAKE_C_FLAGS_RELEASE="-O2 -DNDEBUG" -DCMAKE_C_FLAGS_DEBUG="-ggdb3"'
-export CMAKEFLAGS="${cmake_flags} -DCMAKE_C_FLAGS_RELWITHDEBINFO='-Og -DNDEBUG -ggdb3'"
+export CMAKEFLAGS=\
+'-DCMAKE_C_FLAGS_RELEASE="-O2 -DNDEBUG" -DCMAKE_C_FLAGS_DEBUG="-ggdb3" -DCMAKE_C_FLAGS_RELWITHDEBINFO="-Og -DNDEBUG"'
 
 printf 'Welcome back Mr Saturn!\n'
